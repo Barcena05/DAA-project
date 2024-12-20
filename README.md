@@ -1,1 +1,3 @@
-# DAA-project
+# Descripción
+
+El problema seleccionado es el de repartir determinados suministros a zonas afectadas por algun desastre natural (ciclon, terremoto, incendio). Disponemos de centros logisticos desde los cuales se pueden enviar vehiculos para cubrir las necesidades de las zonas afectadas y existen varias restricciones como por ejemplo: la capacidad de carga de los vehículos y los intervalos de tiempo en los cuales es efectivo entregar a una zona recursos o no. El movimiento de los vehiculos tiene un costo y nuestro objetivo es maximixar la eficacia de las entregas mientras minimizamos el costo de las operaciones realizadas.
