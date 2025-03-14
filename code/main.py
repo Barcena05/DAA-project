@@ -1,29 +1,29 @@
 import numpy as np
 
-cost_matrix = np.array([
-    [0, 12, 8, 15, 20],  # Depósito (0)
-    [12, 0, 10, 18, 25],  # Cliente 1
-    [8, 10, 0, 9, 12],  # Cliente 2
-    [15, 18, 9, 0, 7],  # Cliente 3
-    [20, 25, 12, 7, 0]  # Cliente 4
-])
+# cost_matrix = np.array([
+#     [0, 12, 8, 15, 20],  # Depósito (0)
+#     [12, 0, 10, 18, 25],  # Cliente 1
+#     [8, 10, 0, 9, 12],  # Cliente 2
+#     [15, 18, 9, 0, 7],  # Cliente 3
+#     [20, 25, 12, 7, 0]  # Cliente 4
+# ])
 
 
 
-depot = {'id': 0, 'time_window': [0, 480]}
+# depot = {'id': 0, 'time_window': [0, 480]}
 
-customers = [
-    {'id': 1, 'demand': 0.8, 'time_window': [60, 120], 'service_time': 15},
-    {'id': 2, 'demand': 1.2, 'time_window': [150, 210], 'service_time': 20},
-    {'id': 3, 'demand': 0.5, 'time_window': [180, 240], 'service_time': 10},
-    {'id': 4, 'demand': 1.0, 'time_window': [300, 360], 'service_time': 15}
-]
+# customers = [
+#     {'id': 1, 'demand': 0.8, 'time_window': [60, 120], 'service_time': 15},
+#     {'id': 2, 'demand': 1.2, 'time_window': [150, 210], 'service_time': 20},
+#     {'id': 3, 'demand': 0.5, 'time_window': [180, 240], 'service_time': 10},
+#     {'id': 4, 'demand': 1.0, 'time_window': [300, 360], 'service_time': 15}
+# ]
 
-vehicle_capacity = 2.5
+# vehicle_capacity = 2.5
 
-vehicle_capacity2 = float('inf')
+# vehicle_capacity2 = float('inf')
 
-fixed_cost = 98
+# fixed_cost = 98
 
 def twvrp(cost_matrix, customers,vehicle_capacity,fixed_cost):
 
@@ -102,15 +102,15 @@ def twvrp(cost_matrix, customers,vehicle_capacity,fixed_cost):
     ) + (fixed_cost * len(routes))
     return routes, total_cost
 
-# ===========================
-# Resultados
-# ===========================
-routes, total_cost = twvrp(cost_matrix, customers, vehicle_capacity, fixed_cost)
-print("Rutas optimizadas:")
-for idx, route in enumerate(routes, 1):
-    node_names = ["Depósito" if n == 0 else f"Cliente {n}" for n in route['nodes']]
-    print(f"Vehículo {idx}: {' -> '.join(node_names)}")
-    print(f"   Volumen: {route['demand']:.1f}m³ | Tiempo total: {route['time']} min")
+# # ===========================
+# # Resultados
+# # ===========================
+# routes, total_cost = twvrp(cost_matrix, customers, vehicle_capacity, fixed_cost)
+# print("Rutas optimizadas:")
+# for idx, route in enumerate(routes, 1):
+#     node_names = ["Depósito" if n == 0 else f"Cliente {n}" for n in route['nodes']]
+#     print(f"Vehículo {idx}: {' -> '.join(node_names)}")
+#     print(f"   Volumen: {route['demand']:.1f}m³ | Tiempo total: {route['time']} min")
 
-print(f"\nCosto total: ${total_cost:.2f}")
-print(f"Vehículos utilizados: {len(routes)}")
+# print(f"\nCosto total: ${total_cost:.2f}")
+# print(f"Vehículos utilizados: {len(routes)}")
